@@ -5,9 +5,11 @@ import Footer from '../../Common/footer'
 import Header from '../../Common/header'
 import Banner from '../../Common/banner';
 import TodayDeals from '../../Common/TodayDeals';
+import { useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
+  const navigate = useNavigate()
   const dealsList = [
     { imgSrc: 'VendaVault/src/assets/react.svg', title:'All Deals'},
     { imgSrc: 'VendaVault/src/assets/react.svg', title:'Electronics'},
@@ -33,11 +35,12 @@ const Landing = () => {
         </div>
       </div>
       <div className='flex border'>
-        <button type="button" className='py-1 px-8 text-lg w-1/2'>Login</button>
-        <button type="button" className='py-1 px-8 bg-black text-white'>Register</button>
+        <button onClick={() => navigate('/sellerlogin')} type="button" className='py-1 px-8 text-lg w-1/2'>Login</button>
+        <button onClick={() => navigate('/register')} type="button" className='py-1 px-8 bg-black text-white'>Register</button>
       </div> 
     </div>
   );
+
   return (
     <div className=''>
       
